@@ -1,0 +1,7 @@
+1. W przypadku Javy, metoda main jest zadeklarowana jako public static void main(String[]), podczas gdy w Kotlinie jest to public static final void main(). 
+Oznacza to, że w przypadku Kotlinu, metoda main nie przyjmuje argumentów w postaci tablicy typu String[], ponieważ Kotlin domyślnie nie wymaga ich bezpośredniego użycia.
+
+2. Różnią się instrukcje używane do manipulowania danymi. Jawa używa np. instrukcji takich jak aload, aload_0, astore, iastore, kiedy Kotlin korzysta np. z instrukcji takich jak anewarray, aastore, invokestatic, invokevirtual. Są one specyficzne dla Kotlina i bardziej odpowiadają jego typowemu sposobowi operowania na danych.
+
+3. Różnice dotyczą również obsługi typów danych. W Javie używa się typów prymitywnych, takich jak int, podczas gdy w Kotlinie stosuje się typy opakowujące, na przykład java.lang.Integer. 
+Pozwala to na większą elastyczność i bezpieczeństwo typów w Kotlinie w porównaniu do Javy.

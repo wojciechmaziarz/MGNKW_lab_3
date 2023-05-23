@@ -1,0 +1,94 @@
+public class BubbleSort {
+  public BubbleSort();
+    descriptor: ()V
+    Code:
+       0: aload_0						// Ładowanie referencji na bieżący obiekt (this) na stos
+       1: invokespecial #1                  	// Wywołanie metody specjalnej (<init>) klasy java/lang/Object w celu inicjalizacji obiektu
+       4: return						// Zakończenie metody konstruktora
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    Code:
+       0: bipush        6				// Umiejscowienie na stosie rozmiaru tablicy (6)
+       2: newarray       int				// Utworzenie nowej tablicy o typie int
+       4: dup						// Duplikacja referencji do nowo utworzonej tablicy na stosie
+       5: iconst_0					// Włożenie na stos wartości 0 (indeks tablicy)
+       6: bipush        7				// Włożenie na stos wartości 7
+       8: iastore						// Zapisanie wartości ze stosu do tablicy (7 zostaje zapisane pod indeksem 0)
+       9: dup						// Duplikacja referencji do tablicy na stosie.
+      10: iconst_1					// Włożenie na stos wartości 1
+      11: iconst_2					// Włożenie na stos wartości 2
+      12: iastore						// Zapisanie wartości ze stosu do tablicy (2 zostaje zapisane pod indeksem 1)
+      13: dup						// Dalej, działanie z tablicą analogicznie jak wyżej
+      14: iconst_2
+      15: bipush        10
+      17: iastore
+      18: dup
+      19: iconst_3
+      20: iconst_3
+      21: iastore
+      22: dup
+      23: iconst_4
+      24: iconst_5
+      25: iastore
+      26: dup
+      27: iconst_5
+      28: bipush        8
+      30: iastore
+      31: astore_1					// Zapisanie referencji do tablicy ze stosu do lokalnej zmiennej 1
+      32: getstatic     #7                 	// Pobranie referencji do pola statycznego out klasy java/lang/System na stos
+      35: ldc           #13                 	// Ładowanie stałej łańcuchowej "Tablica przed sortowaniem:" na stos
+      37: invokevirtual #15                 	// Wywołanie metody println na obiekcie PrintStream (wyświetlenie napisu)
+      40: aload_1						// Dalej, kolejne operacje na tablicy, analogicznie jak wyżej i wywołanie metody bubbleSort
+      41: invokestatic  #21                 
+      44: aload_1
+      45: invokestatic  #27                 
+      48: getstatic     #7                  
+      51: ldc           #30                 
+      53: invokevirtual #15                 
+      56: aload_1
+      57: invokestatic  #21                 
+      60: return						// Zakończenie metody main
+
+  public static void bubbleSort(int[]);
+    descriptor: ([I)V
+    Code:
+       0: aload_0						// Ładowanie referencji do tablicy z argumentu metody na stos
+       1: arraylength					// Pobranie długości tablicy i umieszczenie jej na stosie
+       2: istore_1					// Zapisanie wartości długości tablicy do lokalnej zmiennej 1
+       3: iconst_0					// Włożenie na stos wartości 0
+       4: istore_2					// Zapisanie wartości 0 do lokalnej zmiennej 2
+       5: iconst_1					// Włożenie na stos wartości 1
+       6: istore_3					// Zapisanie wartości 1 do lokalnej zmiennej 3
+       7: iload_3						// Ładowanie wartości zmiennej 3 na stos
+       8: iload_1						// Ładowanie wartości zmiennej 1 na stos
+       9: if_icmpge     51				// Jeśli wartość zmiennej 3 jest większa lub równa wartości zmiennej 1, to skocz do offsetu 51 (koniec pętli)
+      12: aload_0						// Ładowanie referencji do tablicy na stos
+      13: iload_3						// Ładowanie wartości zmiennej 3 na stos
+      14: iconst_1					// Włożenie na stos wartości 1
+      15: isub						// Odjęcie wartości 1 od wartości zmiennej 3 na stosie
+      16: iaload						// Pobranie wartości z tablicy pod indeksem 3-1 i umieszczenie jej na stosie
+      17: aload_0						// Ładowanie referencji do tablicy na stos
+      18: iload_3						// Ładowanie wartości zmiennej 3 na stos
+      19: iaload						// Pobranie wartości z tablicy pod indeksem 3 i umieszczenie jej na stosie
+      20: if_icmple     45				// Jeśli wartość na szczycie stosu (wartość pod indeksem 3-1) jest większa od wartości na szczycie stosu (wartość pod indeksem 3), to skocz do offsetu 45
+      23: aload_0						// Ładowanie referencji do tablicy na stos
+      24: iload_3						// Ładowanie wartości zmiennej 3 na stos
+      25: iconst_1					// Włożenie na stos wartości 1
+      26: isub						// Odjęcie wartości 1 od wartości zmiennej 3 na stosie
+      27: iaload						// Pobranie wartości z tablicy pod indeksem 3-1
+      28: istore        4				// Zapisanie wartości ze stosu (wartość pod indeksem 3-1) do lokalnej zmiennej 4
+      30: aload_0						// Ładowanie referencji do tablicy na stos
+      31: iload_3						// Ładowanie wartości zmiennej 3 na stos
+      32: iconst_1					// Włożenie na stos wartości 1
+      33: isub						// Odjęcie wartości 1 od wartości zmiennej 3 na stosie
+      34: aload_0						// Ładowanie referencji do tablicy na stos
+      35: iload_3						// Ładowanie wartości zmiennej 3 na stos
+      36: iaload						// Pobranie wartości z tablicy pod indeksem 3 i umieszczenie jej na stosie
+      37: iastore						// Zapisanie wartości ze stosu (wartość pod indeksem 3) do tablicy
+      38: aload_0						// Ładowanie referencji do tablicy na stos
+      33: goto          7				// Skok do offsetu 7 (powrót do początku pętli)
+      36: getstatic     #7                  	// Pobranie referencji do pola statycznego out klasy java/lang/System na stos
+      39: invokevirtual #39                 	// Wywołanie metody println na obiekcie PrintStream (wyświetlenie nowej linii).
+      42: return						// Zakończenie metody bubbleSort
+}
